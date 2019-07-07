@@ -12,18 +12,33 @@ int* sort(int* nums, int numsSize) {
     } 
     return nums;
 }
+int abs(int a) {
+    if (a > 0) return a;
+    if (a < 0) return -a;
+}
 int threeSumClosest(int* nums, int numsSize, int target){
     nums = sort(nums, numsSize);
     int i, j, k;
-    int res;
-    int newtarget;
+    int res = INT_MAX/2;
+    int temp;
     
     for (i = 0; i < numsSize - 2; i++) {
         j = i + 1;
         k = numsSize - 1;
-        newtarget = target - nums[i];
         while (j < k) {
-            if (nums[j] + nums[k] - newtarget)
+            temp = nums[i] + nums[j] + nums[k];
+		    if (abs(target - temp) > abs(target - res)) {
+			    res = temp;
+		    }
+		    if (temp < target) {
+			    while (j < k && nums[j] == nums[j+1]) j++;
+			    j++;
+		    } else if (temp < target) {
+			    while (j < k && nums[k] == nums[k-1]) k--;
+			    k--;
+		    } else {
+			    return res;
+		    }
         }
+	return res;
 }
-
