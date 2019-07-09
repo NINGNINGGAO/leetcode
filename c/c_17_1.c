@@ -31,13 +31,16 @@ char ** letterCombinations(char * digits, int* returnSize){
     for (int i = 0; i < len; i++) {
         pos = 0;
         int numberindex = digits[i] - '2';
+        prelen = lens[numberindex] * prelen;
+        int siz = count / prelen;
         while (pos < count) {
-            numberindex = (pos+1)/(count/lens[i]);
+            index = pos / siz % lens[numberindex];
             result[pos][i] = digitsletter[numberindex][index];
             pos++;
         }
     }
     return result;
 }
+
 
 
