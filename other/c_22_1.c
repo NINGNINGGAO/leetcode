@@ -1,36 +1,52 @@
-
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
 
-void backTrack(char** mtxRes, int nCnt, int nOpen, int nClose, char* szTemp, int nTempLen, int* returnSize)
+//回溯算法
+//left:可加入左括号数；right:可加入右括号数
+//i用来记录某一种可能组合的字符存储下标，max=n;
+void gen(int left, int right, int i, int max, int* ptr, char* s, char** res)
 {
-    if(nTempLen == 2*nCnt)
-    {
-        int nCurRow = *returnSize;
-        mtxRes[nCurRow] = (char*)malloc(sizeof(char) * (2*nCnt+1));
-        strncpy(mtxRes[nCurRow], szTemp, (2*nCnt+1));
-        *returnSize = *returnSize + 1;
-        return;
-    }
-    if(nOpen < nCnt)
-    {
-        szTemp[nTempLen] = '(';
-        backTrack(mtxRes, nCnt, nOpen+1, nClose, szTemp, nTempLen+1, returnSize);
-    }
-    if(nClose < nOpen)
-    {
-        szTemp[nTempLen] = ')';
-        backTrack(mtxRes, nCnt, nOpen, nClose+1, szTemp, nTempLen+1, returnSize);
-    }
+	if (i == (2 * max))//所有括号都已经加入
+	{
+		s[i] = '\0';
+		res[*ptr] = (char*)malloc(sizeof(char) * (i + 1));
+		if (res[*ptr])
+		{
+			int j=0;
+			while (s[j] != '\0')
+			{
+				res[*ptr][j] = s[j];
+				j++;
+			}
+			res[*ptr][j] = '\0';
+		}
+		(*ptr)++;
+		return;
+	}
+	else
+	{
+		if (left > 0)
+		{
+			s[i] = '(';
+			gen(left - 1, right, i + 1, max, ptr, s, res);
+		}
+		if (right > 0 && right > left)
+		{
+			s[i] = ')';
+			gen(left, right - 1, i + 1, max, ptr, s, res);
+		}
+	}
 }
-char ** generateParenthesis(int n, int* returnSize){
-    if(n == 0)
-        return NULL;
-    char** mtxRes = (char**)malloc(sizeof(char*) * 20000);
-    char* szTemp = (char*)malloc(sizeof(char) * (2*n+1));
-    szTemp[(2*n)] = '\0';
-    *returnSize = 0;
-    backTrack(mtxRes, n, 0, 0, szTemp, 0, returnSize);
-    return mtxRes;
+
+char** generateParenthesis(int n, int* returnSize) {
+	*returnSize = 0;
+	char** res = (char**)malloc(sizeof(char*) * 1500);
+	char* s = (char*)malloc(sizeof(char) * (2 * n + 1));
+	if (s)
+	{
+		s[2 * n] = '\0';
+	}
+	gen(n, n, 0, n, returnSize, s, res);
+	return res;
 }
