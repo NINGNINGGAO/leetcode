@@ -1,17 +1,16 @@
 /*
  * @Author: AGOGIN 
  * @Date: 2019-08-18 20:26:30 
- * @Last Modified by:   AGOGIN 
- * @Last Modified time: 2019-08-18 20:26:30 
+ * @Last Modified by: AGOGIN
+ * @Last Modified time: 2019-08-18 20:28:34
  */
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     struct ListNode *next;
- * };
- */
+#include <stdio.h>
+#include <stdlib.h>
 
+struct ListNode {
+   int val;
+   struct ListNode *next;
+};
 
 struct ListNode* swapPairs(struct ListNode* head){
     struct ListNode *p = malloc(sizeof(struct ListNode));
