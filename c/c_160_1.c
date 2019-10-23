@@ -20,7 +20,7 @@ struct ListNode *getIntersectionNode(struct ListNode *headA, struct ListNode *he
         lenA++;
         AMid = AMid->next;
     }
-    while (AMid != NULL) {
+    while (BMid != NULL) {
         lenB++;
         BMid = BMid->next;
     }
