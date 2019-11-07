@@ -9,50 +9,51 @@
 #include <string.h>
 #include <limits.h>
 #include <stdbool.h>
-void quickSort(int* nums,int first,int end){
-    int temp,l,r;
-    if(first>=end)return;
-    temp=nums[first];
-    l=first;r=end;
-    while(l<r){
-        while(l<r && nums[r]>=temp)r--;
-        if(l<r)nums[l]=nums[r];
-        while(l<r && nums[l]<=temp)l++;
-        if(l<r)nums[r]=nums[l];
+void QuickSort(int* nums, int begin, int end) {
+    if (begin >= end) return;
+    int p = begin, q = end;
+    int temp = nums[p];
+    while (p < q) {
+        while (p < q && nums[q] >= temp) q--;
+        if (p < q) nums[p] = nums[q];
+        while (p < q && nums[p] < temp) p++;
+        if (p < q) nums[q] = nums[p];
     }
-    nums[l]=temp;
-    quickSort(nums,first,l-1);
-    quickSort(nums,l+1,end);
+    nums[p] = temp;
+    QuickSort(nums, begin, p - 1);
+    QuickSort(nums, p + 1, end);
+}
+int distance(int* a, int* b, int numsSize) {
+    int res = 0;
+    for (int i = 0; i < numsSize; i++) {
+        res += (a[i] - b[i]) * (a[i] - b[i]);
+    }
+    return res;
 }
 
 int numberOfBoomerangs(int** points, int pointsSize, int* pointsColSize){
     if (pointsSize < 2) return 0;
-    int i, j, k, l, m, n, count = 0;
-    int lineSize = pointsSize-1;
-    int *lines = malloc(sizeof(int)*lineSize);
-    for (i = 0; i < pointsSize; ++i) {
-        k = 0;
-        for (j = 0; j < pointsSize; ++j) {
-            if (i == j) continue;
-            lines[k++] = pow(points[i][0]-points[j][0], 2)+pow(points[i][1]-points[j][1], 2);
+    int* arr = malloc(sizeof(int) * pointsSize);
+    int res = 0;
+    for (int i = 0; i < pointsSize; i++) {
+        for (int j = 0; j < pointsSize; j++) {
+            arr[j] = distance(points[i], points[j], 2);
         }
-        quickSort(lines, 0, lineSize-1);
-        m = lines[0];
-        n = 1;
-        for (l = 1; l < lineSize; ++l) {
-            if (lines[l] != m) {
-                if (n >= 2) count += n*(n-1);
-                m = lines[l];
-                n = 1;
-            }else{
-                ++n;
+        QuickSort(arr, 0, pointsSize - 1);
+        int temp = arr[1], countNum = 1;
+        for (int k = 2; k < pointsSize; k++) {
+            if (arr[k] != temp) {
+                if (countNum >= 2) res += countNum * (countNum - 1);
+                temp = arr[k];
+                countNum = 1;
+            } else {
+                countNum++;
             }
         }
-        if (n >= 2) count += n*(n-1);
+        if (countNum >= 2) res += countNum * (countNum - 1);
     }
-
-    free(lines);
-    return count;
+    free(arr);
+    return res;
 }
 
 int main() {
