@@ -1,3 +1,20 @@
+/*
+ * @Author: AGOGIN
+ * @Date: 2019-11-15 17:36:21
+ * @Last Modified by: AGOGIN
+ * @Last Modified time: 2019-11-15 17:43:32
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+#include <stdbool.h>
+
+
+int main() {
+
+    return 0;
+}
 #define max(a,b) (((a) > (b)) ? (a) : (b))
 
 char * longestPalindrome(char * s){

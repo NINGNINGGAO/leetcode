@@ -1,12 +1,20 @@
 /*
- * @Author: AGOGIN 
- * @Date: 2019-08-20 16:41:38 
+ * @Author: AGOGIN
+ * @Date: 2019-08-20 16:41:38
  * @Last Modified by: AGOGIN
- * @Last Modified time: 2019-08-20 17:17:39
+ * @Last Modified time: 2019-11-15 17:41:40
  */
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+#include <stdbool.h>
+
+
+int main() {
+
+    return 0;
+}
 
 void ShellSort_1(int* nums, int numsSize) {
     int i, j, temp;

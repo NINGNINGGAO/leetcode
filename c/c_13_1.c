@@ -1,18 +1,35 @@
+/*
+ * @Author: AGOGIN
+ * @Date: 2019-11-15 17:36:53
+ * @Last Modified by: AGOGIN
+ * @Last Modified time: 2019-11-15 17:43:44
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+#include <stdbool.h>
+
+
+int main() {
+
+    return 0;
+}
 int romanToInt(char * s){
     int data = 0;
     char *p = s;
     while (*s != '\0') {
         switch (*s) {
-            case 'M' : 
-                data += 1000; 
+            case 'M' :
+                data += 1000;
                 break;
-            case 'D' : 
-                data += 500; 
+            case 'D' :
+                data += 500;
                 break;
-            case 'C' : 
+            case 'C' :
                 p++;
                 switch (*p) {
-                    case 'M' : 
+                    case 'M' :
                         data += 900;
                         s++;
                         break;
@@ -22,7 +39,7 @@ int romanToInt(char * s){
                         break;
                     default:
                         data += 100;
-                        break 
+                        break
                 }
                 break;
             case 'L':

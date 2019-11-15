@@ -1,3 +1,20 @@
+/*
+ * @Author: AGOGIN
+ * @Date: 2019-11-15 17:37:17
+ * @Last Modified by: AGOGIN
+ * @Last Modified time: 2019-11-15 17:40:40
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+#include <stdbool.h>
+
+
+int main() {
+
+    return 0;
+}
 
 
 /**
@@ -23,16 +40,16 @@ int** fourSum(int* nums, int numsSize, int target, int* returnSize, int** return
     int i, j, k, h;
     int ptr_ra = -1;
     int newtarget;
-    
+
     int** returnArray = (int**)malloc(sizeof(int*) * 17000);
     *returnColumnSizes = (int*)malloc(sizeof(int) * 17000);
     nums = sort(nums, numsSize);
-    
-    
+
+
     for (i = 0; i < numsSize - 3; i++) {
-        if (i > 0 && nums[i] == nums[i - 1]) continue; 
+        if (i > 0 && nums[i] == nums[i - 1]) continue;
         for (j = i + 1; j < numsSize - 2; j++) {
-            if (j > i +1 && nums[j] == nums[j - 1]) continue; 
+            if (j > i +1 && nums[j] == nums[j - 1]) continue;
             k = j + 1;
             h = numsSize - 1;
             newtarget = target - nums[i] - nums[j];

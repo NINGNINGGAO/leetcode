@@ -2,10 +2,19 @@
  * @Author: AGOGIN
  * @Date: 2019-09-06 14:57:01
  * @Last Modified by: AGOGIN
- * @Last Modified time: 2019-09-06 15:44:39
+ * @Last Modified time: 2019-11-15 17:43:03
  */
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+#include <stdbool.h>
 
+
+int main() {
+
+    return 0;
+}
 int main() {
     int obstacleGridSize = 24, obstacleGridColSize = 65;
     //scanf("%d %d", &obstacleGridSize, &obstacleGridColSize);

@@ -1,3 +1,20 @@
+/*
+ * @Author: AGOGIN
+ * @Date: 2019-11-15 17:36:13
+ * @Last Modified by: AGOGIN
+ * @Last Modified time: 2019-11-15 17:40:19
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+#include <stdbool.h>
+
+
+int main() {
+
+    return 0;
+}
 
 int* sort(int* nums, int numsSize) {
     int i, j, temp;
@@ -9,7 +26,7 @@ int* sort(int* nums, int numsSize) {
                 nums[j+1] = temp;
             }
         }
-    } 
+    }
     return nums;
 }
 
@@ -25,7 +42,7 @@ int threeSumClosest(int* nums, int numsSize, int target){
     int i, j, k;
     int res = INT_MAX;
     int temp, mid;
-    
+
     for (i = 0; i < numsSize - 2; i++) {
         j = i + 1;
         k = numsSize - 1;

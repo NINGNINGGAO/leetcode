@@ -1,11 +1,20 @@
 /*
- * @Author: AGOGIN 
- * @Date: 2019-08-23 11:26:49 
+ * @Author: AGOGIN
+ * @Date: 2019-08-23 11:26:49
  * @Last Modified by: AGOGIN
- * @Last Modified time: 2019-08-23 20:41:41
+ * @Last Modified time: 2019-11-15 17:41:41
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+#include <stdbool.h>
+
+
+int main() {
+
+    return 0;
+}
 
 /**
  * Note: The returned array must be malloced, assume caller calls free().

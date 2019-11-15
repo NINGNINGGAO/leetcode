@@ -1,4 +1,20 @@
+/*
+ * @Author: AGOGIN
+ * @Date: 2019-11-15 17:37:03
+ * @Last Modified by: AGOGIN
+ * @Last Modified time: 2019-11-15 17:40:12
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+#include <stdbool.h>
 
+
+int main() {
+
+    return 0;
+}
 
 /**
   * Return an array of arrays of size *returnSize.
@@ -25,7 +41,7 @@ int *sort(int *nums, int numsSize)
 }
 
 int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes){
-    
+
     int target = 0, newTarget;
     int i, j, k;
     int ptr_ra = -1;
@@ -34,11 +50,11 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
     int **returnArray = (int **)malloc(sizeof(int *) * 17000);
     *returnColumnSizes = (int *)malloc(sizeof(int) * 17000);
     nums = sort(nums, numsSize);
-    
+
     for (i = 0; i < numsSize-2; i++)
     {
         if (i == 0 || (i > 0) && (nums[i] != nums[i-1]))
-        {        
+        {
             //双指针
             j = i + 1;
             k = numsSize - 1;
@@ -47,7 +63,7 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
             {
                 if (nums[j] + nums[k] == newTarget)
                 {
-                    
+
                     returnArray[++ptr_ra] = (int *)malloc(sizeof(int) * 3);
                     returnArray[ptr_ra][0] = nums[i];
                     returnArray[ptr_ra][1] = nums[j];
@@ -70,10 +86,10 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
                 }
             }
         }
-        
+
     }
-    
-    
+
+
     *returnSize = ptr_ra+1;
     return returnArray;
 
