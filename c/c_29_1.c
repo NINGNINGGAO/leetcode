@@ -1,11 +1,20 @@
 /*
- * @Author: AGOGIN 
- * @Date: 2019-08-18 16:54:12 
- * @Last Modified by:   AGOGIN 
- * @Last Modified time: 2019-08-18 16:54:12 
+ * @Author: AGOGIN
+ * @Date: 2019-08-18 16:54:12
+ * @Last Modified by:   AGOGIN
+ * @Last Modified time: 2019-08-18 16:54:12
  */
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <limits.h>
+#include <stdbool.h>
+
+
+int main() {
+
+    return 0;
+}
 
 
 
