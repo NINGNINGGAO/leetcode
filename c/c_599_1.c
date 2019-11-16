@@ -70,6 +70,7 @@ char ** findRestaurant(char ** list1, int list1Size, char ** list2, int list2Siz
 
 
 int main() {
+    int a[] = {1,2,3,4,5,6};
     int s1Size = 3;
     char** s1 = malloc(sizeof(char*) * s1Size);
     for (int i = 0; i < s1Size; i++) {
