@@ -2,7 +2,7 @@
  * @Author: AGOGIN
  * @Date: 2019-11-17 18:13:36
  * @Last Modified by: AGOGIN
- * @Last Modified time: 2019-11-17 18:30:03
+ * @Last Modified time: 2019-11-17 18:40:33
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,7 +23,6 @@ int dfs(struct TreeNode* root, int n) {
         if (L > n && R > n) return L < R ? L : R;
         return L > R ? L : R;
     }
-    return -1;
 }
 int findSecondMinimumValue(struct TreeNode* root){
     int n = root->val;
