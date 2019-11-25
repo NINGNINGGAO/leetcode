@@ -2,7 +2,7 @@
  * @Author: AGOGIN
  * @Date: 2019-11-25 10:16:01
  * @Last Modified by: AGOGIN
- * @Last Modified time: 2019-11-25 10:30:36
+ * @Last Modified time: 2019-11-25 10:33:16
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,7 +26,7 @@ void duplicateZeros(int* arr, int arrSize){
     slow--;
     while (i >= 0) {
         if (arr[slow] == 0) arr[i--] = arr[slow];
-        if (i >= 0) arr[i--] = arr[slow];
+        if (i >= 0) arr[i--] = arr[slow--];
     }
 }
 
