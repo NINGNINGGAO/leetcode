@@ -2,9 +2,13 @@
  * @Author: AGOGIN
  * @Date: 2019-09-09 16:54:28
  * @Last Modified by: AGOGIN
- * @Last Modified time: 2019-09-09 21:14:43
+ * @Last Modified time: 2019-12-07 17:17:19
  */
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <limits.h>
+#include <stdbool.h>
 
 int numDecodings(char * s){
     int num = 0;
