@@ -2,7 +2,7 @@
  * @Author: AGOGIN
  * @Date: 2019-12-08 19:26:44
  * @Last Modified by: AGOGIN
- * @Last Modified time: 2019-12-08 20:37:29
+ * @Last Modified time: 2019-12-08 20:41:32
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -55,13 +55,8 @@ bool isScramble(char * s1, char * s2){
     bool res = dp[aLen][0][0];
     for (int i = 0; i < len; i++) {
         for (int j = 0; j < aLen; j++) {
-            for (int k = 0; k < aLen; k++) {
-                printf("%d\t", dp[i][j][k]);
-            }
-            printf("\n");
             free(dp[i][j]);
         }
-        printf("\n\n");
         free(dp[i]);
     }
     free(dp);
