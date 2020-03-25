@@ -22,7 +22,7 @@ int massage(int* nums, int numsSize){
     dp[0][0] = 0;
     dp[1][0] = nums[0];
     for (int i = 1; i < numsSize; i++) {
-        dp[0][i] = Max(dp[0][i - 1], dp[1][i - 1])
+        dp[0][i] = Max(dp[0][i - 1], dp[1][i - 1]);
         dp[1][i] = dp[0][i - 1] + nums[i];
     }
     int ret = Max(dp[0][numsSize - 1], dp[1][numsSize - 1]);
