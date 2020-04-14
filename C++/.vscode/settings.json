@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "algorithm": "cpp",
+        "sstream": "c",
+        "string": "cpp",
+        "vector": "cpp"
+    }
+}
