@@ -3,6 +3,8 @@
         "algorithm": "cpp",
         "sstream": "c",
         "string": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "array": "cpp",
+        "string_view": "cpp"
     }
 }
