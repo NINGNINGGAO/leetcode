@@ -6,16 +6,44 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - J_200_1",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HelloWorld<java_a453888d>",
+            "request": "launch",
+            "mainClass": "HelloWorld",
+            "projectName": "java_a453888d"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-J_3_1<java_a453888d>",
+            "request": "launch",
+            "mainClass": "J_3_1",
+            "projectName": "java_a453888d"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HelloWorld<java>",
+            "request": "launch",
+            "mainClass": "HelloWorld",
+            "projectName": "java"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-J_200_1<java>",
             "request": "launch",
             "mainClass": "J_200_1",
             "projectName": "java"
         },
         {
             "type": "java",
-            "name": "Debug (Launch) - Current File",
+            "name": "Debug (Launch)-J_3_1<java>",
             "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "J_3_1",
+            "projectName": "java"
         }
     ]
 }
